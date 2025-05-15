@@ -14,11 +14,19 @@ const handleUser = e => {
 
     // crate user in the sever 
 
-    fetch('http://localhost:3000/users')
+    fetch('http://localhost:3000/users',{
+        method:"POST",
+        headers:{
+            'content-type':'application/json'
+        },
+        body: JSON.stringify(user)
+
+
+    })
     .then(res => res.json() )
     .then (data => {
         console.log( 'data after post ',data)
-    })
+    });
 
 }
 
